@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Quicksand:wght@300..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+    --ff-primary: "Quicksand", sans-serif;
+    --text-color: white;
+    --bg-url: url(../img/dark.png);
+    --stroke-color: rgba(255, 255, 255, 0.5);
+    --surface-color: rgba(255, 255, 255, 0.05);
+    --surface-color-hover: rgba(0, 0, 0, 0.02);
+    --highlight-color: rgba(0, 0, 0, 0.2);
+    --switch-bg: url(../img/moon.svg);
+}
+
+.light {
+    --text-color: black;
+    --bg-url: url(../background/background4.png);
+    --stroke-color: rgba(0, 0, 0, 0.5);
+    --surface-color: rgba(0, 0, 0, 0.05);
+    --surface-color-hover: rgba(0, 0, 0, 0.02);
+    --highlight-color: rgba(0, 0, 0, 0.1);
+    --switch-bg: url(../img/sun.svg);
+}
+
+body {
+    background: var(--bg-url) no-repeat top center/cover;
+    height: 100vh;
+}
+
+body * {
+    font-family: var(--ff-primary);
+    color: var(--text-color);
+}
+
+#container {
+    width: 100%;
+    max-width: 58.8rem;
+    margin: 5.6rem auto 0px;
+    padding: 0 2.4rem;
+}
+
+@media (max-width: 768px) {
+    #container {
+        padding: 0 1.6rem;
+        max-width: 100%;
+    }
+
+    ul {
+        gap: 1rem;
+    }
+
+    ul li a {
+        padding: 1.2rem 1.6rem;
+        font-size: 1.4rem;
+    }
+
+    footer {
+        font-size: 1.4rem;
+        --text-color: white;
+    }
+
+    #profile img {
+        width: 8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #profile img {
+        width: 6rem;
+    }
+
+    ul li a {
+        padding: 1rem;
+        font-size: 1.2rem;
+    }
+
+    #switch {
+        width: 5rem;
+    }
+
+    #switch button {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    #switch span {
+        width: 5rem;
+    }
+}
+
+#profile {
+    text-align: center;
+    padding: 2.4rem;
+}
+
+#profile img {
+    width: 11.2rem;
+}
+
+#profile p {
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    margin-top: .8rem;
+}
+
+#switch {
+    position: relative;
+    width: 6.4rem;
+    margin: .4rem auto;
+}
+
+#switch button {
+    width: 3.2rem;
+    height: 3.2rem;
+    background: white var(--switch-bg) no-repeat center;
+    border: 0;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 1;
+    transform: translateY(-50%);
+    animation: slide-back 0.2s;
+}
+
+.light #switch button {
+    animation: slide-in 0.4s forwards;
+}
+
+#switch span {
+    display: block;
+    width: 6.4rem;
+    height: 2.4rem;
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 99.99rem;
+}
+
+#switch button:hover {
+    outline: 8px solid var(--highlight-color);
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    padding: 2.4rem 0;
+}
+
+ul li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.6rem 2.4rem;
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    border-radius: .8rem;
+    backdrop-filter: blur(.4rem);
+    -webkit-backdrop-filter: blur(.4rem);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.5rem;
+    transition: background .2s;
+}
+
+ul li a:hover {
+    background: var(--surface-color-hover);
+    color: var(--text-color);
+}
+
+li a .logo {
+    width: 2.4rem;
+    height: 2.4rem;
+    margin-right: 1rem;
+}
+
+footer {
+    padding: 2.4rem 0;
+    text-align: center;
+    font-size: 1.6rem;
+    --text-color: white;
+}
+
+/* media queries */
+@media (min-width: 700px) {
+    :root {
+        --bg-url: url(../img/dark.png);
+    }
+
+    .light {
+        --bg-url: url(../background/background4.png);
+    }
+}
+
+@keyframes slide-in {
+    from {
+        left: 0;
+    }
+    to {
+        left: 50%;
+    }
+}
+
+@keyframes slide-back {
+    from {
+        left: 50%;
+    }
+    to {
+        left: 0;
+    }
+}
