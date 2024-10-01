@@ -23,7 +23,7 @@ O projeto é composto pelos seguintes arquivos:
    Clone este repositório para sua máquina local usando o comando:
 
    ```bash
-   git clone https://github.com/rodriigues03/link-contato.git
+   git clone https://github.com/rodriigues11/contato.git
    ```
 
 2. **Abrir o Projeto**
